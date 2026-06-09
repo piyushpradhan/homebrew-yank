@@ -1,6 +1,6 @@
 cask "yank" do
-  version "0.7.39"
-  sha256 "d904f6c348133ff7f7f4eb52f254e8851e977823cd9d2c2c067fcb96df30421c"
+  version "0.7.40"
+  sha256 "001ee6f481a5c175e5396f02fa0a4851d098912cbac4c47a5f5a623500e7c934"
 
   url "https://github.com/piyushpradhan/yank/releases/download/v#{version}/Yank_#{version}_aarch64.dmg",
       verified: "github.com/piyushpradhan/yank/"
@@ -19,10 +19,11 @@ cask "yank" do
 
   app "Yank.app"
 
-  # Tauri ships the macOS bundle linker-signed with no sealed resources,
-  # which macOS rejects as "damaged" on first launch. Strip any stray xattrs
-  # Brew may have left, then re-apply a proper ad-hoc signature with sealed
-  # resources so the validity check passes. No Developer ID needed.
+  # Tauri ships the macOS bundle linker-signed with no sealed
+  # resources, which macOS rejects as "damaged" on first launch.
+  # Strip any stray xattrs Brew may have left, then re-apply a
+  # proper ad-hoc signature with sealed resources so the validity
+  # check passes. No Developer ID needed.
   postflight do
     system_command "/usr/bin/xattr",
                    args: ["-cr", "#{appdir}/Yank.app"]

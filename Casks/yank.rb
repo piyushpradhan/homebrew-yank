@@ -1,6 +1,6 @@
 cask "yank" do
-  version "0.7.50"
-  sha256 "1d77624ac30840c510f16ec35831276c20402ad9b03f19c0feb8c371a51d8770"
+  version "0.7.51"
+  sha256 "773456564464702173a5a572efe9915c1c89155c8ad0e9e408f8a951d87b67b3"
 
   url "https://github.com/piyushpradhan/yank/releases/download/v#{version}/Yank_#{version}_aarch64.dmg",
       verified: "github.com/piyushpradhan/yank/"
